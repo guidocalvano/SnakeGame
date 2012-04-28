@@ -41,10 +41,10 @@ SnakeGame.prototype.start = function()
     } ;
 
 
-SnakeGame.prototype.addPlayer = function()
+SnakeGame.prototype.addPlayer = function( onDeath )
     {
      var player = ( new Snake() ).init(  [ Math.random(), Math.random(), Math.random() ], 5, this,
-             Math.floor( Math.random() * this.map.width ), Math.floor( Math.random() * this.map.height ) ) ;
+             Math.floor( Math.random() * this.map.width ), Math.floor( Math.random() * this.map.height ), onDeath ) ;
 
      this.playerSet.push( player ) ;
      

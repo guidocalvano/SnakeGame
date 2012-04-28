@@ -5,6 +5,8 @@ require( '../OgreJS/src/js/ogre.js' ) ;
 var http = require('http') ;
 var sio = require("socket.io") ;
 var fs = require('fs') ;
+var SnakeGame = require( './SnakeGame' ) ;
+var PlayerManagement = require( './PlayerManagement' ) ;
 
 var app = http.createServer(function (request, response) {
  
@@ -39,10 +41,9 @@ io.set('transports', [
 ]);
 
 
-var SnakeGame = require( './SnakeGame' ) ;
 
 var snakeGame = ( new SnakeGame() ).init( 18, 22, 0 ) ;
-
+/*
 
 ogre.input.on( 'keyPressed', function( event )
     {
@@ -119,6 +120,7 @@ ogre.input.on( 'keyPressed', function( event )
         } ;
     
     } ) ;
+*/
 
 
 snakeGame.start() ;
@@ -137,6 +139,9 @@ function handler (req, res) {
     res.end(data);
   });
 }
+
+var playerManagement = ( new PlayerManagement() ).init( io.sockets, snakeGame ) ;
+
 /*
 function PlayerManager() {} ;
 
@@ -162,7 +167,7 @@ PlayerManager.init = function( sockets )
 
 // var playerQueue = [] ;
 // var MAX_PLAYER_COUNT = 5 ;
-
+/*
 io.sockets.on('connection', function (socket) {
 
     console.log( 'CONNECTION' ) ;
@@ -192,20 +197,7 @@ io.sockets.on('connection', function (socket) {
                   //});
                   //
                   
-                  socket.on( 'snakeCommand', function( data )
-                    {
-                     switch( data )
-                        {
-                         case "up"      :            player.up()    ; break ;
-                         case "down"    :            player.down()  ; break ;
-                         case "left"    :            player.left()  ; break ;
-                         case "right"   :            player.right() ; break ;
-                        
-                        } ;
-                        
-                    } ) ;
-                    
-                    socket.emit( 'snakeCreated', '' ) ;
+ 
  //               }
  //        else
  //           playerQueue.push( socket ) ;
@@ -213,7 +205,7 @@ io.sockets.on('connection', function (socket) {
     }  ) ;
 });
 
-
+*/
 
 ogre.start( 100 ) ;
 

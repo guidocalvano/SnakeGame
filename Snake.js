@@ -49,15 +49,18 @@ Snake.prototype.left = function()
      if( this.direction[ 0 ] != 1 ) this.direction = [ -1, 0 ] ;
     } ;
 
-Snake.prototype.reset = function()
+Snake.prototype.destroy = function( headIsOnObstacle )
     {
 
      for( var i in this.tailSegments )
-        if( i != this.headIndex ) 
+        if( i != this.headIndex || ( !headIsOnObstacle )  ) 
             this.game.remove( this.tailSegments[ i ] ) ;
     
     
-     this.init( this.color, 1, this.game, 1, 1 ) ;
+     var j = this.game.playerSet.indexOf( this ) ;
+     
+     this.game.playerSet.splice( j, 1 ) ;
+    // this.init( this.color, 1, this.game, 1, 1 ) ;
     } ;
     
     
@@ -75,7 +78,7 @@ Snake.prototype.move = function()
      if( this.requiredGrowth > 0 )
         {   
          this.tailSegments.splice( this.headIndex, 0, [] ) ;      
-         this.requiredGrowth -- ;
+         this.requiredGrowth-- ;
         } 
      else 
         this.game.remove( tail ) ;
@@ -87,7 +90,10 @@ Snake.prototype.move = function()
      
      var outcome = this.game.add( newHead, -1, this.color )
      if( outcome == -1 ) 
-        this.reset() ;
+        {
+         this.destroy( true ) ;
+         this.onDeath() ;
+        }
      else
         this.requiredGrowth += outcome ;
     } ;
