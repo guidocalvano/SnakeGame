@@ -1,0 +1,98 @@
+<!DOCTYPE html>  
+<!-- 
+
+Copyright Guido Sales Calvano
+
+a simple example of force directed graph layout using html5 and raphael.js:
+
+http://raphaeljs.com/
+
+We should be using xhtml if we want to support older versions of ie, which raphael 
+does appear to support (though we should TEST THIS FIRST). 
+
+-->
+<html lang="en">  
+  <head>  
+    <meta charset="utf-8">  
+    <title> Firewall Snake Game </title>  
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="/socket.io.js"></script>
+
+    <script type="text/javascript" >
+       $( document ).ready( function() 
+		{
+         console.log( 'DOC READY' ) ;
+         
+         var socket = io.connect('http://localhost:8126' ) ;
+          
+          //, {
+//  'reconnect': true,
+//  'reconnection delay': 50,
+//  'max reconnection attempts': 100
+// }); 
+          
+          socket.on( 'ready', function()
+                {
+                 console.log( 'READY' ) ;
+
+                 socket.emit( 'createSnake', '' ) ;
+
+                
+                 socket.on( 'snakeCreated', function()
+                    {
+                                         console.log( 'SNAKE CREATED' ) ;
+
+                     $( document ).keypress( function( event ) 
+                            {
+                             switch( event.charCode + event.keyCode  )
+                                {
+                                 case 38 : // up
+                                 
+                                    console.log( 'up' ) ;
+
+                                    socket.emit( 'snakeCommand', 'up' ) ;
+                                
+                                    break ;
+                                    
+                                 case 40 : // down
+
+                                    socket.emit( 'snakeCommand', 'down' ) ;
+                                                 
+                                    console.log( 'down' ) ;
+
+                                    break ;
+                                    
+                                 case 37 : // left
+                                 
+                                    socket.emit( 'snakeCommand', 'left' ) ;
+                                         
+                                    console.log( 'left' ) ;
+
+                                    break ;
+                                                        
+                                 case 39 : // right
+                                 
+                                    socket.emit( 'snakeCommand', 'right' ) ;
+                                    
+                                    console.log( 'right' ) ;
+                                                     
+                                                                                       
+                                    break ;
+
+                                
+                                } ;
+                            } ) ;
+                        } ) ;
+                } ) ;
+            } ) ;
+          
+           
+    
+
+    </script>
+
+  </head>  
+  <body>  
+    <p> hello </p>
+  </body>  
+</html>  
