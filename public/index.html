@@ -24,23 +24,37 @@ does appear to support (though we should TEST THIS FIRST).
          console.log( 'DOC READY' ) ;
          
          var socket = io.connect('http://localhost:8126' ) ;
-          
-          //, {
-//  'reconnect': true,
-//  'reconnection delay': 50,
-//  'max reconnection attempts': 100
-// }); 
-          
-          socket.on( 'ready', function()
+                    
+         socket.on( 'ready', function()
                 {
                  console.log( 'READY' ) ;
 
                  socket.emit( 'createSnake', '' ) ;
 
+                 socket.on( 'queuePosition', function( position )
+                    {
+                     $( 'body' ).html( 'players before you ' + position ) ;
+                    } ) ;
+
+
+                 socket.on( 'gameOver', function()
+                    {
+                     $( document ).unbind( 'keypress' )  ;
+                    } ) ;
                 
+                
+                  socket.on( 'disconnect', function()
+                    {
+                     $( 'body' ).html( 'connection lost' ) ;
+                    } ) ;
+                    
+                    
                  socket.on( 'snakeCreated', function()
                     {
-                                         console.log( 'SNAKE CREATED' ) ;
+                     console.log( 'SNAKE CREATED' ) ;
+                     
+                     $( 'body' ).html( 'click in the window and use the arrow keys to control the snake' ) ;
+
 
                      $( document ).keypress( function( event ) 
                             {
@@ -93,6 +107,5 @@ does appear to support (though we should TEST THIS FIRST).
 
   </head>  
   <body>  
-    <p> hello </p>
   </body>  
 </html>  

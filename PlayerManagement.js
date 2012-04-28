@@ -37,6 +37,7 @@ PlayerManagement.prototype.enqueuePlayer = function( socket )
     
      this.playerQueue.push( socket ) ;
 
+     socket.emit( 'queuePosition', this.playerQueue.length - 1 ) ;
 
      socket.removeAllListeners( 'disconnect' ) ;
      socket.on( 'disconnect', function()
@@ -47,6 +48,8 @@ PlayerManagement.prototype.enqueuePlayer = function( socket )
          
          self.introducePlayer() ;      
         } ) ;
+        
+     
     } ;
 
         
@@ -63,7 +66,6 @@ PlayerManagement.prototype.introducePlayer = function()
      
      this.playerQueue.splice( 0, 1 ) ;
          
-
      var snake = this.snakeGame.addPlayer( function()
         {
         
@@ -95,7 +97,12 @@ PlayerManagement.prototype.introducePlayer = function()
             
         } ) ;
         
-        socket.emit( 'snakeCreated', '' ) ;    
+        socket.emit( 'snakeCreated', '' ) ; 
+        
+        for( var i in this.playerQueue )
+            {
+             this.playerQueue[ i ].emit( 'queuePosition', i ) ;
+            } 
     } ;
     
  return PlayerManagement ;
