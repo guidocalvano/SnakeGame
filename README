@@ -1,0 +1,22 @@
+
+==== Overview ====
+
+This code is meant to allow playing a Snake game on the LED Light District, a monitor based on LEDs and a glass cube wall we happened to find in our temporary hackerspace.
+
+It is written in javascript.
+
+Because testing requires seeing what is happening and the display isn't yet working I developed around a bunch of place holder screens.
+
+One screen uses Raphael.js and works in the browser.
+
+The second works on a node server, and is built on ogrejs (see https://github.com/guidocalvano/OgreJS )
+
+OgreJS is a bit difficult to install and only works on mac, so contact me before working on it.
+
+
+Two software tasks remain:
+
+  * ScreenDriver: the code to interface with the actual screen 
+  * PlayerManagement: everyone should get a turn to play
+
+Right now I am going to work on PlayerManagement
