@@ -1,3 +1,10 @@
+
+To run: ogrenode ./r.js ./main.js
+
+If you tear out the ogrejs dependend screen you can run using an unmodified version of node:
+
+node ./r.js ./main.js
+
 ==== Overview ====
 
 This code is meant to allow playing a Snake game on the LED Light District, a monitor based on LEDs and a glass cube wall we happened to find in our temporary hackerspace.
