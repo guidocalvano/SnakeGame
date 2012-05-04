@@ -1,12 +1,12 @@
 
 
-define( [ './Map', './Snake', './OgreScreen' ], function( Map, Snake, OgreScreen )
+define( [ './Map', './Snake', './RemoteScreen' ], function( Map, Snake, RemoteScreen )
 {
 function SnakeGame() {} ;
 
-SnakeGame.prototype.init = function( width, height, playerCount ) 
+SnakeGame.prototype.init = function( width, height, playerCount, socketSet ) 
     {
-     this.screen = ( new OgreScreen() ).init( 20, width, height ) ;
+     this.screen = ( new RemoteScreen() ).init( socketSet ) ;
     
      this.map = ( new Map() ).init( width, height ) ;
     

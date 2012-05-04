@@ -1,4 +1,4 @@
-require( '../OgreJS/src/js/ogre.js' ) ; 
+// require( '../OgreJS/src/js/ogre.js' ) ; 
 // require( '../OgreJS/src/js/mygui.js' ) ;
 
 
@@ -15,6 +15,15 @@ var app = http.createServer(function (request, response) {
     var filename = './public/index.html' ;
     if( request.url == '/socket.io.js' )
         filename = './public/socket.io.js' ;
+
+    if( request.url == '/BrowserScreen.js' )
+        filename = './public/BrowserScreen.js' ;
+
+    if( request.url == '/jquery.js' )
+        filename = './public/jquery.js' ;
+
+    if( request.url == '/raphael.js' )
+        filename = './public/raphael.js' ;
 
      
     fs.readFile( filename , function(error, content) {
@@ -42,86 +51,7 @@ io.set('transports', [
 
 
 
-var snakeGame = ( new SnakeGame() ).init( 18, 22, 0 ) ;
-/*
-
-ogre.input.on( 'keyPressed', function( event )
-    {
-     switch( event.keyName )
-        {
-                 case 'down' :
-                
-                    if( snakeGame.playerSet[ 0 ].direction[ 1 ] != 1 )
-                    
-                        snakeGame.playerSet[ 0 ].direction = [ 0, -1 ] ;
-                
-                    break ;
-                    
-                 case 'up' : 
-
-                    if( snakeGame.playerSet[ 0 ].direction[ 1 ] != -1 )
-                    
-                        snakeGame.playerSet[ 0 ].direction = [ 0, 1 ] ;
-                                     
-                    break ;
-                    
-                 case 'left' : // left
-                 
-                    if( snakeGame.playerSet[ 0 ].direction[ 0 ] != 1 )
-
-                        snakeGame.playerSet[ 0 ].direction = [ -1, 0 ] ;
-                    
-                    break ;
-                    
-                 case 'right' : // right
-                 
-                    if( snakeGame.playerSet[ 0 ].direction[ 0 ] != -1 )
-
-                        snakeGame.playerSet[ 0 ].direction = [  1, 0 ] ;
-
-                    break ;
-
-                 case 's' : // up
-                
-                    if( snakeGame.playerSet[ 1 ].direction[ 1 ] != 1 )
-                    
-                        snakeGame.playerSet[ 1 ].direction = [ 0, -1 ] ;
-                
-                    break ;
-                    
-                 case 'w' : // down
-
-                    if( snakeGame.playerSet[ 1 ].direction[ 1 ] != -1 )
-                    
-                        snakeGame.playerSet[ 1 ].direction = [ 0, 1 ] ;
-                                     
-                    break ;
-                    
-                 case 'a' : // left
-                 
-                    if( snakeGame.playerSet[ 1 ].direction[ 0 ] != 1 )
-
-                        snakeGame.playerSet[ 1 ].direction = [ -1, 0 ] ;
-                    
-                    break ;
-                    
-                 case 'd' : // right
-                 
-                    if( snakeGame.playerSet[ 1 ].direction[ 0 ] != -1 )
-
-                        snakeGame.playerSet[ 1 ].direction = [  1, 0 ] ;
-
-                    break ;
-        
-        
-        
-        
-        
-        } ;
-    
-    } ) ;
-*/
-
+var snakeGame = ( new SnakeGame() ).init( 22, 17, 0, io.sockets ) ;
 
 snakeGame.start() ;
 
@@ -142,70 +72,5 @@ function handler (req, res) {
 
 var playerManagement = ( new PlayerManagement() ).init( io.sockets, snakeGame ) ;
 
-/*
-function PlayerManager() {} ;
-
-
-PlayerManager.init = function( sockets )
-    {
-     this.sockets = sockets ;
-    
-     this.playerQueue = [] ;
-     this.MAX_PLAYER_COUNT = 5 ;
-    
-     this.sockets.on( 'connection', function( socket )
-        {
-         socket.emit( 'ready', '' ) ;
-      
-        
-        
-        } ) ;
-    
-    } ;
-*/
-
-
-// var playerQueue = [] ;
-// var MAX_PLAYER_COUNT = 5 ;
-/*
-io.sockets.on('connection', function (socket) {
-
-    console.log( 'CONNECTION' ) ;
-
-
-    socket.emit( 'ready', '' ) ;
-
-
-    socket.on( 'createSnake', function()
-        {
-         console.log( 'CREATE SNAKE' ) ;
-    
-         // if( snakeGame.playerSet.length < MAX_PLAYER_COUNT )
-         //       {
-                 var player = snakeGame.addPlayer(
-                     function()
-                        {
-                         
-                        
-                        }
-                    ) ;
-          
-                  //
-                  // socket.on('disconnect', function () {
-
-                  //  console.log( 'PLAYER DISCONNECTED' ) ;
-                  //});
-                  //
-                  
- 
- //               }
- //        else
- //           playerQueue.push( socket ) ;
-            
-    }  ) ;
-});
-
-*/
-
-ogre.start( 100 ) ;
+// ogre.start( 100 ) ;
 
