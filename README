@@ -1,9 +1,14 @@
-
 ==== THERE ARE MANY BRANCHES, CHECK TO PICK THE ONE YOU NEED ====
 
 
+The most important branch is serialArduino and contains the ArduinoScreen and snake game for the lld (led light district).
 
-  * ScreenDriver: the code to interface with the actual screen
-  * PlayerManagement: everyone should get a turn to play
+see testScreen.js for use.
 
-Right now I am going to work on PlayerManagement
+to run:
+
+the test screen
+node ./r.js testScreen.js
+
+the snake game
+node ./r.js main.js
