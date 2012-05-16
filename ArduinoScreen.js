@@ -9,7 +9,10 @@ ArduinoScreen.prototype.init = function( serialString, width, height )
      this.height = height ;
      
      // '/dev/tty.ARDUINOBT-BluetoothSeri'
-     this.serial = new serial.SerialPort( '/dev/tty.ARDUINOBT-BluetoothSeri' ) ;
+     this.serial = new serial.SerialPort( '/dev/tty.ARDUINOBT-BluetoothSeri',
+        {
+         baudrate: 115200
+        }) ;
   
        //  this.serial.write( String.fromCharCode( 3 ) + String.fromCharCode( 0 ) + String.fromCharCode(0   )+ String.fromCharCode( 2 ) ) ;
   

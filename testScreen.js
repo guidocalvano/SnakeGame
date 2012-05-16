@@ -13,7 +13,7 @@ function putColumn( x, r, g, b )
      for( var y = 0 ; y < 5 ; y++ )
         screen.setColor( y, x, [ r, g, b ] ) ; 
     } ;
-
+/*
      putColumn( 0, 0, 0, .1 ) ;
 
      putColumn( 1, 0, .1, 0 ) ;
@@ -21,14 +21,16 @@ function putColumn( x, r, g, b )
      putColumn( 2, 0, .1, .1 ) ;
 
 
+
 setTimeout( function() {
+
      putColumn( 3, .1, 0, 0 ) ;
 
      putColumn( 4, .1, 0, .1 ) ;
 
      putColumn( 5, .1, .1, 0 ) ;
 
-}, 50 ) ;
+}, 140 ) ;
 
 setTimeout( function() {
 
@@ -37,19 +39,21 @@ setTimeout( function() {
      putColumn( 6, .1, .1, .1 ) ;
 
      putColumn( 7, .1, 0, 0 ) ;
- }, 100 ) ;
+ }, 280 ) ;
 
+*/
 
-/*
 setInterval( function()
     {
      
      putColumn( columnIndex,  0, 0, 0 ) ;
      columnIndex++ ;
-     columnIndex = columnIndex >= 8 ? 0 : columnIndex ;
+     
+     if( columnIndex > 7 ) columnIndex = 0 ;
+     //columnIndex = columnIndex > 7 ? 0 : columnIndex ;
 
      putColumn( columnIndex, .1, 0, 0 ) ;
           
-    }, 3000 ) ;
+    }, 2000 ) ;
     
-    */
+    
