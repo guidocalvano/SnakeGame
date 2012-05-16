@@ -1,31 +1,7 @@
 
-To run: ogrenode ./r.js ./main.js
-
-If you tear out the ogrejs dependend screen you can run using an unmodified version of node:
-
-node ./r.js ./main.js
-
-==== Overview ====
-
-This code is meant to allow playing a Snake game on the LED Light District, a monitor based on LEDs and a glass cube wall we happened to find in our temporary hackerspace.
-
-It is written in javascript.
-
-Because testing requires seeing what is happening and the display isn't yet working I developed around a bunch of place holder screens, that I developed in branches.
-
-A server screen; The second works on a node server, and is built on ogrejs (see https://github.com/guidocalvano/OgreJS )
-
-This version contains most working code. It can be found in the branch *ogrejs*
-
-OgreJS is a bit difficult to install and only works on mac, so contact me before working on it.
+==== THERE ARE MANY BRANCHES, CHECK TO PICK THE ONE YOU NEED ====
 
 
-A browser screen; one screen uses Raphael.js and works in the browser. 
-
-It was just to get the game working. The screen might be useful but the rest should be ignored.
-It can be found in the branch *basicClientGameWithRaphael*
-
-Two software tasks remain:
 
   * ScreenDriver: the code to interface with the actual screen
   * PlayerManagement: everyone should get a turn to play
