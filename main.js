@@ -51,7 +51,7 @@ io.set('transports', [
 
 
 
-var snakeGame = ( new SnakeGame() ).init( 22, 17, 0, io.sockets ) ;
+var snakeGame = ( new SnakeGame() ).init( 5, 8, 0, io.sockets ) ;
 
 snakeGame.start() ;
 

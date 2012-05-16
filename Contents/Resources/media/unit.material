@@ -1,0 +1,213 @@
+material erikHairTop_1Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit
+			{
+				texture erikHairTop.jpg
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material erikSideHair_1Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit
+			{
+				texture erikSideHair.jpg
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material puppet2_file6Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture puppetShoe.png
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material puppet2_puppetTrousers
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture puppetTrouser.png
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material puppet2_file11Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture puppetWool.png
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material erikSide_1Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture erikSide.jpg
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material erikHairTopNonTransparent_1Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture erikHairTopNonTransparent.jpg
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material erikSideHairNonTransparent_1Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture erikSideHairNonTransparent.jpg
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}
+material erik_1Material
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 1 1 1 1
+			specular 0 0 0 1
+			emissive 0 0 0
+
+			texture_unit
+			{
+				texture erik.jpg
+				tex_coord_set 0
+				colour_op modulate
+				scale 1 1
+				scroll 0 0
+				rotate 0
+			}
+		}
+	}
+}

@@ -15,7 +15,7 @@
 		{
          console.log( 'DOC READY' ) ;
          
-         var browserScreen = new BrowserScreen() ;
+        // var browserScreen = new BrowserScreen() ;
          
          var socket = io.connect('http://localhost:8126' ) ;
         /*
@@ -51,20 +51,19 @@
                      console.log( 'SNAKE CREATED' ) ;
                      
                      $( 'body' ).html( 'click in the window and use the arrow keys to control the snake' ) ;
-
+/*
                      browserScreen.init( 20, 22, 17 ) ;
                      
                      socket.on( 'BrowserScreen.setColor', function( arg )
                         {
-                         console.log( JSON.stringify( arg ) ) ;
                          browserScreen.setColor( arg.x, arg.y, arg.color ) ;
                         } ) ;
-
+*/
                      $( document ).keypress( function( event ) 
                             {
-                             switch( event.charCode + event.keyCode  )
+                             switch( event.charCode /*+ event.keyCode*/  )
                                 {
-                                 case 38 : // up
+                                 case 119 : // up
                                  
                                     console.log( 'up' ) ;
 
@@ -72,7 +71,7 @@
                                 
                                     break ;
                                     
-                                 case 40 : // down
+                                 case 115 : // down
 
                                     socket.emit( 'snakeCommand', 'up' ) ;
                                                  
@@ -80,7 +79,7 @@
 
                                     break ;
                                     
-                                 case 37 : // left
+                                 case 97 : // left
                                  
                                     socket.emit( 'snakeCommand', 'left' ) ;
                                          
@@ -88,7 +87,7 @@
 
                                     break ;
                                                         
-                                 case 39 : // right
+                                 case 100 : // right
                                  
                                     socket.emit( 'snakeCommand', 'right' ) ;
                                     
@@ -96,8 +95,11 @@
                                                      
                                                                                        
                                     break ;
-
-                                
+                                 default:
+                                 
+                                    console.log( 'event char code' + event.charCode ) ;
+                                    console.log( 'event key code' + event.keyCode ) ;
+                                                                    
                                 } ;
                             } ) ;
                         } ) ;

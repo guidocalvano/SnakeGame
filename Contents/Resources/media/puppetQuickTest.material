@@ -1,0 +1,39 @@
+material skin
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.862745 0.862745 0.862745 1
+			specular 0 0 0 1
+			emissive 0 0 0
+		}
+	}
+}
+material hair
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.735521 0.745098 0.62822 1
+			specular 0 0 0 1
+			emissive 0 0 0
+		}
+	}
+}
+material lambert4
+{
+	technique
+	{
+		pass
+		{
+			ambient 0 0 0 1
+			diffuse 0.722799 0.764015 0.784314 1
+			specular 0 0 0 1
+			emissive 0 0 0
+		}
+	}
+}

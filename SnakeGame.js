@@ -1,12 +1,12 @@
 
 
-define( [ './Map', './Snake', './RemoteScreen' ], function( Map, Snake, RemoteScreen )
+define( [ './Map', './Snake', './ArduinoScreen' ], function( Map, Snake, ArduinoScreen )
 {
 function SnakeGame() {} ;
 
 SnakeGame.prototype.init = function( width, height, playerCount, socketSet ) 
     {
-     this.screen = ( new RemoteScreen() ).init( socketSet ) ;
+     this.screen = ( new ArduinoScreen() ).init( '/dev/tty.ARDUINOBT-BluetoothSeri', width, height ) ;
     
      this.map = ( new Map() ).init( width, height ) ;
     
