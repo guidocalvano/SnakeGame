@@ -15,6 +15,7 @@ PlayerManagement.prototype.init = function( sockets, snakeGame )
     
      this.sockets.on( 'connection', function( socket )
         {
+        
          socket.emit( 'ready', '' ) ;
       
          console.log( 'CREATE SNAKE' ) ;
@@ -65,7 +66,9 @@ PlayerManagement.prototype.introducePlayer = function()
      var socket = this.playerQueue[ 0 ] ;
      
      this.playerQueue.splice( 0, 1 ) ;
+     
          
+    
      var snake = this.snakeGame.addPlayer( function()
         {
         
@@ -103,6 +106,8 @@ PlayerManagement.prototype.introducePlayer = function()
             {
              this.playerQueue[ i ].emit( 'queuePosition', i ) ;
             } 
+            
+    
     } ;
     
  return PlayerManagement ;

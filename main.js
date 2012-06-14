@@ -13,6 +13,7 @@ var app = http.createServer(function (request, response) {
     console.log('request for: ' + request.url );
     
     var filename = './public/index.html' ;
+   
     if( request.url == '/socket.io.js' )
         filename = './public/socket.io.js' ;
 
@@ -41,13 +42,11 @@ var app = http.createServer(function (request, response) {
 
 
 
-var io = sio.listen( 8126 ) ;
+var io = sio.listen( 8143 ) ;
 
-app.listen(8125);
+app.listen(8144);
 
-io.set('transports', [
-   'xhr-polling'
-]);
+io.set('transports');
 
 
 

@@ -11,6 +11,8 @@ RemoteScreen.prototype.init = function( socketSet )
 
 RemoteScreen.prototype.setColor = function( x, y, color )
     {
+     console.log( 'rs set color' ) ;
+    
      this.socketSet.emit( 'BrowserScreen.setColor', { x: x, y: y, color: color } ) ;
     } ;
     

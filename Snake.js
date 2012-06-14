@@ -75,6 +75,7 @@ Snake.prototype.move = function()
      
      this.headIndex = this.nextSegmentIndex( this.headIndex ) ;
      
+     
      if( this.requiredGrowth > 0 )
         {   
          this.tailSegments.splice( this.headIndex, 0, [] ) ;      
@@ -84,11 +85,14 @@ Snake.prototype.move = function()
         this.game.remove( tail ) ;
 
 
+
      
      var newHead = [ ( this.game.map.width + oldHead[ 0 ] + this.direction[ 0 ] ) % this.game.map.width, ( this.game.map.height + oldHead[ 1 ] + this.direction[ 1 ] ) % this.game.map.height ] ;
      this.tailSegments[ this.headIndex ] = newHead ;
      
      var outcome = this.game.add( newHead, -1, this.color )
+    // var outcome = 0 ;
+      
      if( outcome == -1 ) 
         {
          this.destroy( true ) ;

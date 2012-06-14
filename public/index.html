@@ -15,9 +15,9 @@
 		{
          console.log( 'DOC READY' ) ;
          
-        // var browserScreen = new BrowserScreen() ;
+         var browserScreen = new BrowserScreen() ;
          
-         var socket = io.connect('http://localhost:8126' ) ;
+         var socket = io.connect('http://localhost:8143' ) ;
         /*
          
          */
@@ -51,14 +51,14 @@
                      console.log( 'SNAKE CREATED' ) ;
                      
                      $( 'body' ).html( 'click in the window and use the arrow keys to control the snake' ) ;
-/*
+
                      browserScreen.init( 20, 22, 17 ) ;
                      
                      socket.on( 'BrowserScreen.setColor', function( arg )
                         {
                          browserScreen.setColor( arg.x, arg.y, arg.color ) ;
                         } ) ;
-*/
+
                      $( document ).keypress( function( event ) 
                             {
                              switch( event.charCode /*+ event.keyCode*/  )
