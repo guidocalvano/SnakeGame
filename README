@@ -1,26 +1,14 @@
-==== Overview ====
-
-This code is meant to allow playing a Snake game on the LED Light District, a monitor based on LEDs and a glass cube wall we happened to find in our temporary hackerspace.
-
-It is written in javascript.
-
-Because testing requires seeing what is happening and the display isn't yet working I developed around a bunch of place holder screens, that I developed in branches.
-
-A server screen; The second works on a node server, and is built on ogrejs (see https://github.com/guidocalvano/OgreJS )
-
-This version contains most working code. It can be found in the branch *ogrejs*
-
-OgreJS is a bit difficult to install and only works on mac, so contact me before working on it.
+==== THERE ARE MANY BRANCHES, CHECK TO PICK THE ONE YOU NEED ====
 
 
-A browser screen; one screen uses Raphael.js and works in the browser. 
+The most important branch is serialArduino and contains the ArduinoScreen and snake game for the lld (led light district).
 
-It was just to get the game working. The screen might be useful but the rest should be ignored.
-It can be found in the branch *basicClientGameWithRaphael*
+see testScreen.js for use.
 
-Two software tasks remain:
+to run:
 
-  * ScreenDriver: the code to interface with the actual screen
-  * PlayerManagement: everyone should get a turn to play
+the test screen
+node ./r.js testScreen.js
 
-Right now I am going to work on PlayerManagement
+the snake game
+node ./r.js main.js
