@@ -4,7 +4,7 @@
 <html lang="en">  
   <head>  
     <meta charset="utf-8">  
-    <title> Firewall Snake Game </title>  
+    <title> LED Light District Snake Game </title>  
     <script src="/raphael.js"></script>
     <script src="/jquery.js"></script>
     <script src="/socket.io.js"></script>
@@ -17,7 +17,7 @@
          
          var browserScreen = new BrowserScreen() ;
          
-         var socket = io.connect('http://localhost:8143' ) ;
+         var socket = io.connect( 'http://' + location.hostname + ':' + 8149 ) ;
         /*
          
          */

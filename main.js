@@ -42,9 +42,9 @@ var app = http.createServer(function (request, response) {
 
 
 
-var io = sio.listen( 8143 ) ;
+var io = sio.listen( 8149 ) ;
 
-app.listen(8144);
+app.listen(8150);
 
 io.set('transports');
 
