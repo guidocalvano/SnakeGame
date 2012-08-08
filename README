@@ -5,6 +5,10 @@ The most important branch is serialArduino and contains the ArduinoScreen and sn
 
 see testScreen.js for use.
 
+make sure the constructor of ArduinoScreen is invoked with the correct serial port: probably '/dev/ttyACM0' on linux or '/dev/tty.usbmodem1a21' on mac
+
+the mac will keep changing the serial port name. sometimes mac can troll you.
+
 to run:
 
 the test screen
