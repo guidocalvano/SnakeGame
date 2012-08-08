@@ -11,7 +11,7 @@ ArduinoScreen.prototype.init = function( serialString, width, height )
      this.sentMessageCount = 0 ;
      
      // '/dev/tty.ARDUINOBT-BluetoothSeri'
-     this.serial = new serial.SerialPort( '/dev/tty.ARDUINOBT-BluetoothSeri',
+     this.serial = new serial.SerialPort( serialString,
         {
          baudrate: 115200
         }) ;
